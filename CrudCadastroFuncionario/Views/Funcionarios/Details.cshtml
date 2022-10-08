@@ -1,0 +1,199 @@
+﻿@model CrudCadastroFuncionario.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-offset-1 col-md-12 col-sm-5 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">Nome:</label>
+                <div class="form-control">
+                    @Html.DisplayFor(model => model.Nome)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">Cpf:</label>
+                <div class="form-control">
+                    @Html.DisplayFor(model => model.Cpf)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">RG:</label>
+                <div class="form-control">
+                    @Html.DisplayFor(model => model.RG)
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-5 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">Orgão emissor do RG:</label>
+                <div class="form-control">
+                    @Html.DisplayFor(model => model.Emissor)
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">Titulo de eleitor:</label>
+                <div class="form-control">
+                    @Html.DisplayFor(model => model.TituloEleitor)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">CNH:</label>
+                <div class="form-control">
+                    @Html.DisplayFor(model => model.CNH)
+                    &nbsp
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-5 col-xs-12">
+            <div class="form-group">
+                <label class="labelInfo">Considerar como gestor?</label>
+                <div>
+                    @if (Model.Gestor)
+                    {
+                        <p>Sim</p>
+                    }
+                    else
+                    {
+                        <p>Não</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">CEP:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Cep)
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-9 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Endereço:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Logradouro)
+            </div>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-3 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Número:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Numero)
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Complemento:</label>
+            <div class="form-control"> 
+                @Html.DisplayFor(model => model.Endereco.Complemento)
+                &nbsp
+            </div>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Bairro:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Bairro)
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Cidade:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Cidade)
+            </div>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Estado:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Estado)
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-12 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <label class="labelInfo">Ponto Refencia:</label>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.Endereco.Referencia)
+                &nbsp
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-5 col-xs-12">
+    <div class="form-group">
+        <label class="labelInfo">Ativo:</label>
+        @if (Model.Ativo)
+        {
+            <p>Sim</p>
+        }
+        else
+        {
+            <p>Não</p>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-1 col-md-3 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <a class="btn btn-success" asp-action="Index">Novo</a>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-3 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-3 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-3 col-sm-5 col-xs-12">
+        <div class="form-group">
+            <a class="btn btn-primary" asp-action="Index">Mostrar Todos</a>
+        </div>
+    </div>
+</div>
+</div>

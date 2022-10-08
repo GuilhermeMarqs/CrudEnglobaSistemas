@@ -1,0 +1,176 @@
+﻿@model CrudCadastroFuncionario.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastro</h1>
+
+<h4>Funcionario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-12 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Nome:</label>
+                        <input asp-for="Nome" class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Cpf:</label>
+                        <input id="txtCPF" asp-for="Cpf" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">RG:</label>
+                        <input asp-for="RG" class="form-control" />
+                        <span asp-validation-for="RG" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Orgão emissor do RG:</label>
+                        <input asp-for="Emissor" class="form-control" />
+                        <span asp-validation-for="Emissor" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Titulo de eleitor:</label>
+                        <input asp-for="TituloEleitor" class="form-control" />
+                        <span asp-validation-for="TituloEleitor" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">CNH:</label>
+                        <input asp-for="CNH" class="form-control" />
+                        <span asp-validation-for="CNH" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Considerar como gestor?</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" asp-for="Gestor">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">CEP:</label>
+                        <input asp-for="Endereco.Cep" class="form-control" />
+                        <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-9 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Endereço:</label>
+                        <input asp-for="Endereco.Logradouro" class="form-control" />
+                        <span asp-validation-for="Endereco.Logradouro" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-3 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Número:</label>
+                        <input asp-for="Endereco.Numero" class="form-control" />
+                        <span asp-validation-for="Endereco.Numero" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Complemento:</label>
+                        <input asp-for="Endereco.Complemento" class="form-control" />
+                        <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Bairro:</label>
+                        <input asp-for="Endereco.Bairro" class="form-control" />
+                        <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Cidade:</label>
+                        <input asp-for="Endereco.Cidade" class="form-control" />
+                        <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-6 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Estado:</label>
+                        <input asp-for="Endereco.Estado" class="form-control" />
+                        <span asp-validation-for="Endereco.Estado" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-12 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <label class="labelInfo">Ponto Refencia:</label>
+                        <input asp-for="Endereco.Referencia" class="form-control" />
+                        <span asp-validation-for="Endereco.Referencia" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-5 col-xs-12">
+                <div class="form-group">
+                    <label class="labelInfo">Ativo:</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" asp-for="Ativo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-success" />
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-4 col-sm-5 col-xs-12">
+                    <div class="form-group">
+                        <a class="btn btn-primary" asp-action="Index">Mostrar Todos</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
