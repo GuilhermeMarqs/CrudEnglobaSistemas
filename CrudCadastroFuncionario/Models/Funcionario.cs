@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CrudCadastroFuncionario.Models
 {
     [Table("Funcionario")]
-    public class Funcionario : Entity
+    public class Funcionario: Entity
     {
         [Required]
         public string Nome { get; set; }
@@ -23,6 +23,7 @@ namespace CrudCadastroFuncionario.Models
 
         [Required]
         public bool Ativo { get; set; }
+        public Guid EnderecoId { get; set; }
         public virtual Endereco Endereco { get; set; }  
     }
 }

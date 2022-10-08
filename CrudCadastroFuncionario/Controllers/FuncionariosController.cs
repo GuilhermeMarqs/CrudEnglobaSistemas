@@ -103,11 +103,10 @@ namespace CrudCadastroFuncionario.Controllers
         public IActionResult Delete(Guid id)
         {
             var funcionario = _funcionario.ObterFuncionarioEndereco(id);
-            var endereco = _endereco.ObterPorId(funcionario.Endereco.Id);
             if (funcionario != null)
             {
-                _funcionario.Remover(id);
-                _endereco.Remover(funcionario.Endereco.Id);
+                _funcionario.Remover(funcionario.Id);
+                _endereco.Remover(funcionario.EnderecoId);
             }
            
             
